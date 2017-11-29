@@ -16,11 +16,11 @@ Example:
 ```js
 const { decode, encode } = require('famicom-pro-action-rocky');
 
-console.log(decode(0xfcbdd274)); // { address: 0x0000, key: 0x00, value: 0x00 }
-console.log(decode(0x00000000)); // { address: 0x65da, key: 0xd4, value: 0x3f }
+console.log(decode('FCBDD274')); // { address: 0x0000, key: 0x00, value: 0x00 }
+console.log(decode('00000000')); // { address: 0x65da, key: 0xd4, value: 0x3f }
 
-console.log(encode(0x0000, 0x00, 0x00)); // 0xfcbdd274
-console.log(encode(0x65da, 0x3f, 0xd4)); // 0x00000000
+console.log(encode(0x0000, 0x00, 0x00)); // 'FCBDD274'
+console.log(encode(0x65da, 0x3f, 0xd4)); // '00000000'
 ```
 
 ## License
