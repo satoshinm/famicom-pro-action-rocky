@@ -37,4 +37,30 @@ function decode(encoded) {
   return { address, key: compare, value };
 }
 
-module.exports = { decode };
+function encode(address, value, compare)
+{
+  let decoded = address & 0x7fff;
+  decoded |= compare << 16;
+  decoded |= value << 24;
+
+  let key = rocky_key;
+  let encoded = new Uint32Array(1);
+  let i = 31;
+  while (i--) {
+    const bit = decoded >> rocky_shifts[i];
+
+    if (((key >> 30) ^ bit) & 1) {
+      encoded[0] |= 2 << i;
+    }
+
+    if (bit & 1) {
+      key ^= rocky_xor;
+    }
+
+    key <<= 1;
+  }
+
+  return encoded[0];
+}
+
+module.exports = { decode, encode };
