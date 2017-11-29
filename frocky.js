@@ -71,4 +71,8 @@ function encodeRocky(address, value, compare)
   return toHex(encoded[0], 8).toUpperCase();
 }
 
-module.exports = { decodeRocky, encodeRocky };
+function isRockyCode(code) {
+  return !!code.match(/^[0-9A-F]{8}$/);
+}
+
+module.exports = { decodeRocky, encodeRocky, isRockyCode };

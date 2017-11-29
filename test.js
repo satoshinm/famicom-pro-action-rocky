@@ -1,6 +1,6 @@
 'use strict';
 
-const { decodeRocky, encodeRocky } = require('./');
+const { decodeRocky, encodeRocky, isRockyCode } = require('./');
 const test = require('tape');
 
 test('decodeRocky', (t) => {
@@ -18,5 +18,16 @@ test('encodeRocky', (t) => {
 
 test('invalid no compare', (t) => {
   t.equal(encodeRocky(0x0000, 0x00), null);
+  t.end();
+});
+
+test('is rocky', (t) => {
+  t.equal(isRockyCode('00000000'), true);
+  t.equal(isRockyCode('FCBDD274'), true);
+  t.equal(isRockyCode('fcbdd274'), false);
+  t.equal(isRockyCode('fcbdd27'), false);
+  t.equal(isRockyCode('fcbdd2740'), false);
+  t.equal(isRockyCode('0'), false);
+  t.equal(isRockyCode(''), false);
   t.end();
 });

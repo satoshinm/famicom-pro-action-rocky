@@ -14,14 +14,18 @@ implementations.
 Example:
 
 ```js
-const { decodeRocky, encodeRocky } = require('famicom-pro-action-rocky');
+const { decodeRocky, encodeRocky, isRockyCode } = require('famicom-pro-action-rocky');
 
 console.log(decodeRocky('FCBDD274')); // { address: 0x0000, key: 0x00, value: 0x00 }
 console.log(decodeRocky('00000000')); // { address: 0x65da, key: 0xd4, value: 0x3f }
 
 console.log(encodeRocky(0x0000, 0x00, 0x00)); // 'FCBDD274'
 console.log(encodeRocky(0x65da, 0x3f, 0xd4)); // '00000000'
+
+console.log(isRockyCode('FCBDD274')); // true
 ```
+
+For the purposes of this module, Rocky codes must always be exactly 8 uppercase hex digits.
 
 ## License
 
