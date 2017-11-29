@@ -45,6 +45,8 @@ function toHex(n, width) {
 
 function encode(address, value, compare)
 {
+  if (compare === undefined || compare === null) return null;
+
   let decoded = address & 0x7fff;
   decoded |= compare << 16;
   decoded |= value << 24;

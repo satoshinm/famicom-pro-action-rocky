@@ -15,3 +15,8 @@ test('encode', (t) => {
 
   t.end();
 });
+
+test('invalid no compare', (t) => {
+  t.equal(encode(0x0000, 0x00), null);
+  t.end();
+});
