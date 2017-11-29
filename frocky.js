@@ -15,7 +15,7 @@ const rocky_shifts = [
 const rocky_key = 0x7e5ee93a;
 const rocky_xor = 0x5c184b91;
 
-function decode(s) {
+function decodeRocky(s) {
   let encoded = parseInt(s, 16);
   encoded >>= 1;
   let key = rocky_key;
@@ -43,7 +43,7 @@ function toHex(n, width) {
   return '00000000'.substring(0, width - s.length) + s;
 }
 
-function encode(address, value, compare)
+function encodeRocky(address, value, compare)
 {
   if (compare === undefined || compare === null) return null;
 
@@ -71,4 +71,4 @@ function encode(address, value, compare)
   return toHex(encoded[0], 8).toUpperCase();
 }
 
-module.exports = { decode, encode };
+module.exports = { decodeRocky, encodeRocky };
