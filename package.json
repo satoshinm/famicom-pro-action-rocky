@@ -1,0 +1,32 @@
+{
+  "name": "famicom-pro-action-rocky",
+  "version": "1.2.0",
+  "description": "Famicom Pro Action Rocky decoder/encoder",
+  "main": "frocky.js",
+  "files": [
+    "frocky.js"
+  ],
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/satoshinm/famicom-pro-action-rocky.git"
+  },
+  "keywords": [
+    "famicom",
+    "nes",
+    "rocky",
+    "par",
+    "code"
+  ],
+  "author": "Satoshi N. M.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/satoshinm/famicom-pro-action-rocky/issues"
+  },
+  "homepage": "https://github.com/satoshinm/famicom-pro-action-rocky#readme",
+  "devDependencies": {
+    "tape": "^4.8.0"
+  }
+}
