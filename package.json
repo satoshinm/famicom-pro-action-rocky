@@ -1,6 +1,6 @@
 {
   "name": "famicom-pro-action-rocky",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Famicom Pro Action Rocky decoder/encoder",
   "main": "frocky.js",
   "files": [
