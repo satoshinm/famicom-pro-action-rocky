@@ -30,7 +30,7 @@ function decode(encoded) {
     key <<= 1;
   }
 
-  const address = (decoded & 0x7fff) | 0x8000;
+  const address = (decoded & 0x7fff);
   const compare = (decoded >> 16) & 0xff;
   const value   = (decoded >> 24) & 0xff;
 
